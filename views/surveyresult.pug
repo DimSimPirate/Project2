@@ -1,0 +1,27 @@
+doctype html
+
+html(lang="en")
+head
+	title Mobile Survey Form by PUG
+	link(rel='stylesheet'
+		 type='text/css'
+		 href='/css/surveystyle.css'
+		 media='screen')
+		 
+body 
+
+	h2 Thank you for participating in the survey
+	div#result
+		h4 Current Survey Results: 
+
+		h5 For Female Respondents:
+			each product,idx in products
+				br
+				|#{product}: #{surveyresults.fp[idx]}  
+			
+		h5 For Male Respondents
+			each product,idx in products
+				br
+				|#{product}: #{surveyresults.mp[idx]}  
+			
+
