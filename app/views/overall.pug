@@ -1,0 +1,53 @@
+doctype html
+
+html(lang="en")
+head
+	title Statistics for Wikipedia revisions 
+	link(rel="stylesheet" type="text/css" href="/css/style.css")
+	script(src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js")
+	script(src="https://www.gstatic.com/charts/loader.js")
+	script(type="text/javascript" src="/js/main.js")
+body 
+	h2 Statistics for Wikipedia revisions
+	table
+		tr
+			th Statistic
+			th Title
+			th Value
+		tr
+			td Article with most revisions
+			td(id = "mostRevTitle")
+			td(id = "mostRevSum")
+		tr
+			td Article with least revisions
+			td(id = "leastRevTitle")
+			td(id = "leastRevSum")
+		tr
+			td Edited by largest group of unique users
+			td(id = "largeGroupName")
+			td(id = "largeGroupSum")
+		tr
+			td Edited by smallest group of unique users
+			td(id = "smallGroupName")
+			td(id = "smallGroupSum")
+		tr
+			td Article with longest history
+			td(id = "longestHistTitle")
+			td(id = "longestHistDate")
+		tr
+			td Article with shortest history
+			td(id = "shortestHistTitle")
+			td(id = "shortestHistDate")
+			
+	a(href='/pieChart' id='pie') Pie Chart
+	br
+	a(href='/barChart' id='bar') Bar Charts
+	div#myChart
+	
+	h2 Search for article
+	form(action='revision/getLatest' method='GET')
+			label Title: 
+				input(type="text" name="title")
+			input(type = "submit" value = "Search")
+			|  
+			input(type = "reset" value = "Clear")
